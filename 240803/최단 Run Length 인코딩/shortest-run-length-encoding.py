@@ -12,7 +12,7 @@ def run_length_encoding(A):
             result += (compare+str(count))
             compare = A[i]
             count = 1
-        if i == 9:
+        if i == N-1:
             result += (A[i]+str(count))
     return len(result)
         
