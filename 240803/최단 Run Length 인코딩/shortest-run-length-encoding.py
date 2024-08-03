@@ -3,14 +3,12 @@ N = len(A)
 
 def run_length_encoding(A):
     count = 1
-    compare = A[0]
     result = ""
     for i in range(1, N):
-        if compare == A[i]:
+        if A[i-1] == A[i]:
             count += 1
         else:
-            result += (compare+str(count))
-            compare = A[i]
+            result += (A[i-1]+str(count))
             count = 1
         if i == N-1:
             result += (A[i]+str(count))
