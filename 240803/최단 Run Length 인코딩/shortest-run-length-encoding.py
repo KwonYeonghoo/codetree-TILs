@@ -16,7 +16,7 @@ def run_length_encoding(A):
             result += (A[i]+str(count))
     return len(result)
         
-min_length = 10
+min_length = 20
 for _ in range(N):
     temp = A[N-1]
     for i in range(N-1, 0, -1):
