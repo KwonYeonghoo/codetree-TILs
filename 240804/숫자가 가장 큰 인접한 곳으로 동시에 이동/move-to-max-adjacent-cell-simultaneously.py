@@ -38,6 +38,6 @@ for _ in range(t):
                 # count[max_r][max_c] += 1
         if max_num == arr[r][c]: # 변화가 없다면
             continue
-        temp.append([max_r, max_c])
+        temp.append([max_r+1, max_c+1])
     marbles = temp
 print(len(marbles))
