@@ -4,7 +4,11 @@ k = k-1
 
 def is_fine():
     flag = True
-    for i in range(n-1):
+    for i in range(n):
+        if i == n-1:
+            for j in range(k, k+m):
+                arr[i][j] = 1
+            return arr
         for j in range(k, k+m):
             arr[i][j] = 1
             if arr[i+1][j] != 0:
