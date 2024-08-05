@@ -23,6 +23,7 @@ for _ in range(t):
         r,c = marble[0]-1, marble[1]-1
         count[r][c] += 1
         if count[r][c] > 1:
+            temp.pop()
             count[r][c] = 0
             continue
         max_num = arr[r][c]
