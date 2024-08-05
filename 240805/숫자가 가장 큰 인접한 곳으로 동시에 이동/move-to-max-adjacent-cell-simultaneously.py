@@ -40,5 +40,6 @@ for _ in range(t):
             temp.append([r+1, c+1])
         else:
             temp.append([max_r+1, max_c+1])
+        count[r][c] = 0   # 초기화
     marbles = temp
 print(len(marbles))
