@@ -8,18 +8,23 @@ def is_beautiful(num):
     two = 0
     three = 0 
     four = 0
-    for a in num:
-        if a == 1:
-            continue
-        elif a == 2:
+    for i in range(len(num)):
+        if num[i] == 1: continue
+        elif num[i] == 2:
+            if three != 0 or four != 0:
+                return False
             two += 1
             if two == 2:
                 two = 0
-        elif a == 3:
+        elif num[i] == 3:
+            if two != 0 or four != 0:
+                return False
             three += 1
             if three == 3:
                 three = 0
         else:
+            if two != 0 or three != 0:
+                return False
             four += 1
             if four == 4:
                 four = 0
@@ -27,6 +32,7 @@ def is_beautiful(num):
         return True
     else:
         return False
+
 
 num = []
 count = 0
