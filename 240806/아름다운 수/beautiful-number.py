@@ -4,44 +4,54 @@
 
 n = int(input())
 
-def is_beautiful(num):
-    two = 0
-    three = 0 
-    four = 0
-    for i in range(len(num)):
-        if num[i] == 1:
-            if two != 0 or three != 0 or four != 0:
-                return False
-        elif num[i] == 2:
-            if three != 0 or four != 0:
-                return False
-            two += 1
-            if two == 2:
-                two = 0
-        elif num[i] == 3:
-            if two != 0 or four != 0:
-                return False
-            three += 1
-            if three == 3:
-                three = 0
-        else:
-            if two != 0 or three != 0:
-                return False
-            four += 1
-            if four == 4:
-                four = 0
-    if two == 0 and three == 0 and four == 0:
-        return True
-    else:
-        return False
+# def is_beautiful(num):
+#     two = 0
+#     three = 0 
+#     four = 0
+#     for i in range(len(num)):
+#         if num[i] == 1:
+#             if two != 0 or three != 0 or four != 0:
+#                 return False
+#         elif num[i] == 2:
+#             if three != 0 or four != 0:
+#                 return False
+#             two += 1
+#             if two == 2:
+#                 two = 0
+#         elif num[i] == 3:
+#             if two != 0 or four != 0:
+#                 return False
+#             three += 1
+#             if three == 3:
+#                 three = 0
+#         else:
+#             if two != 0 or three != 0:
+#                 return False
+#             four += 1
+#             if four == 4:
+#                 four = 0
+#     if two == 0 and three == 0 and four == 0:
+#         return True
+#     else:
+#         return False
 
+def is_beautiful():
+    i = 0
+    while i < n:
+        if i + num[i] - 1 >= n:
+            return False
+        for j in range(i, i+num[i]):
+            if num[j] != num[i]:
+                return False
+        i += num[i]
+    return True
 
 num = []
 count = 0
 def permutation(curr_num):
     global count
     if curr_num == n+1:
-        if is_beautiful(num):
+        if is_beautiful():
             count += 1
         return
 
