@@ -9,7 +9,9 @@ def is_beautiful(num):
     three = 0 
     four = 0
     for i in range(len(num)):
-        if num[i] == 1: continue
+        if num[i] == 1:
+            if two != 0 or three != 0 or four != 0:
+                return False
         elif num[i] == 2:
             if three != 0 or four != 0:
                 return False
