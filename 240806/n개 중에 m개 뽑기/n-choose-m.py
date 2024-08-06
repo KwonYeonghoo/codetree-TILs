@@ -11,7 +11,7 @@ def permutation(curr_num):
         return
 
     for i in range(1, N+1):
-        if curr_num >= 2 and ans[-1] <= i:
+        if curr_num >= 2 and ans[-1] >= i:
             continue
         ans.append(i)
         permutation(curr_num+1)
